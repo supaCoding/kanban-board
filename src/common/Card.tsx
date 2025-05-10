@@ -8,7 +8,7 @@ interface ICard {
 
 const Card: React.FC<ICard> = ({ taskInfo, nextAction, prevAction }) => {
   return (
-    <div style={{ margin: "10px" }}>
+    <div style={{ padding: '4px', margin: "10px", border: '2px solid black', borderRadius: '4px' }}>
       <div className="textDiv">{taskInfo}</div>
       <div className="btnContainer">
         {prevAction && (
