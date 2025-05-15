@@ -1,10 +1,23 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 
-const RecursiveComponent = ({ data }) => {
-  const isObject = (x: unknown) => typeof x === "object" && x !== null;
+type JSONValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JSONValue[]
+  | { [key: string]: JSONValue };
+
+type Props = {
+  data: JSONValue;
+};
+
+const RecursiveComponent = ({ data }: Props) => {
+  const isObject = (x: JSONValue): x is { [key: string]: JSONValue } =>
+    typeof x === "object" && x !== null && !Array.isArray(x);
 
   if (!isObject(data)) {
-    return <li>{data}</li>;
+    return <li>{String(data)}</li>;
   }
 
   const pairs = Object.entries(data);

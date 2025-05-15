@@ -21,7 +21,7 @@ const initialColumn: IStage[] = [
 
 const KanbanBoard = () => {
   const [tasks, setTask] = useState<Itask[]>([]);
-  const [stages, setStages] = useState<IStage[]>(initialColumn);
+  // const [stages, setStages] = useState<IStage[]>(initialColumn);
 
   const addTask = (value: string, stage: string) => {
     const newTasklist = tasks;
@@ -45,8 +45,8 @@ const KanbanBoard = () => {
 
   return (
     <div className="container">
-      {stages &&
-        stages.map((stage: IStage) => (
+      {initialColumn &&
+        initialColumn.map((stage: IStage) => (
           <Column
             key={stage.stageId}
             tasks={tasks}

@@ -1,7 +1,7 @@
 import "./App.css";
-import RecursiveComponent from "./common/RecursiveComponent";
+// import RecursiveComponent from "./common/RecursiveComponent";
 import KanbanBoard from "./components/KanbanBoard";
-import { nestedData } from "./constants/RecursiveData";
+// import { nestedData } from "./constants/RecursiveData";
 
 function App() {
   return (
